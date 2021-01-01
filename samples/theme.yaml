@@ -1,0 +1,28 @@
+version: 1
+kind: Theme
+
+metadata:
+  theme_name: SageDark
+  theme_kind: dark
+  description: Lorem ipsum dolor sit amet
+  avatar_id: TRgGRsfH635CSYGr2siYe7
+  authors:
+    - name: James Brown
+      contact: james@brown.com
+
+colors:
+  bg: "#FFF"
+  warning: "#FF7A4B"
+
+shadows:
+  icon_highlight:
+    h_offset: "0.2rem"
+    v_offset: "0.1rem"
+    blur: "0.2rem"
+    spread: "0.1rem"
+    inset: false
+
+elements:
+  general.dropdown:
+    background_color: "#FFF"
+    border_radius: "5px"

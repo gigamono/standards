@@ -1,0 +1,19 @@
+version: 1
+kind: AuthInfo
+
+metadata:
+  app_name: TeamCliff
+  app_id: 7Gfh5n3r2jV6KLvfg9mJGtwUji8v370hwgT
+  avatar_id: TRgGRsfH635CSYGr2siYe7
+  description: Lorem ipsum dolor sit amet
+  authors:
+    - name: James Brown
+      contact: james@brown.com
+
+details:
+  auth_kind: api_key
+  auth_index: 0
+  fields:
+      email: james@brown.com
+      name: "James $(tasks[0].surname)"
+

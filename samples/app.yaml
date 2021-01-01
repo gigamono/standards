@@ -1,0 +1,100 @@
+version: 1
+kind: App
+
+metadata:
+  app_name: TeamCliff
+  description: Lorem ipsum dolor sit amet
+  avatar_id: TRgGRsfH635CSYGr2siYe7
+  homepage_url: teamcliff.io
+  category: accounting
+  tags: [accounting, productivity]
+  authors:
+    - name: James Brown
+      contact: james@brown.com
+
+auths:
+  - kind: oauth2 # Auth protocol
+    fields:
+      - key: email # Used to refer to this field
+        label: Email # User friendly label. Some markdown formatting allowed
+        tip: Enter your email here # User friendly description.
+        is_required: true # If field has to be filled.
+        is_administrative: true # If field meant for admin.
+        input_kind: email # Corresponds somewhat to input[type] and select.
+        default_value: null
+        dropdown: null # For dropdown input types.
+
+  - kind: api_key
+    fields:
+      - key: workspace
+        label: Workspace
+        tip: Select workspace
+        is_required: true
+        is_administrative: false
+        input_kind: select
+        default_value: null
+        dropdown:
+          kind: static # Options can be static or dynamic values
+          allows_multiple: false # If multiple options can be selected
+          allows_custom: true # If you can add you own custom entry
+          options:
+            - Google
+            - Apple
+    api:
+      code: null
+      form:
+        method: POST
+        url: "https://api.teamcliff.io/auth"
+        headers:
+          Authorization: "Bearer $(fields[0].api_key)"
+        params: null
+        body: null
+
+triggers:
+  - key: email
+    label: Email
+    tip: Enter your email here
+    auth_kinds: null
+    is_required: true
+    is_destructive: false # If an operation that modifies or deletes resources.
+    is_identification: true # If it is used to identify resource to operate on.
+    resource_noun: email # A noun that best identifies what this trigger operates on.
+    input_kind: select
+    dropdown:
+      kind: dynamic
+      allows_multiple: false
+      allows_custom: true
+      options: "$(fields[0].email)"
+    api:
+      code: null
+      form:
+        method: POST
+        url: "https://api.teamcliff.io/auth"
+        headers: null
+        params: null
+        body: null
+
+actions:
+  - action_kind: search
+    key: email
+    label: Email
+    tip: Enter your email here
+    auth_kinds: null
+    is_required: true
+    is_destructive: false
+    is_identification: true
+    noun: email
+    input_kind: select
+    dropdown:
+      kind: dynamic
+      allows_multiple: false
+      allows_custom: true
+      options: null
+    api:
+      code: null
+      form:
+        method: POST
+        url: "https://api.teamcliff.io/auth"
+        headers: null
+        params: null
+        body: null
