@@ -8,7 +8,7 @@ metadata:
   description: Lorem ipsum dolor sit amet
   authors:
     - name: James Brown
-      contact: james@brown.com
+      email: james@brown.com
 
 details:
   auth_kind: api_key

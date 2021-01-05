@@ -3,12 +3,13 @@ kind: Theme
 
 metadata:
   theme_name: SageDark
+  theme_version: v1.0.0
   theme_kind: dark
   description: Lorem ipsum dolor sit amet
   avatar_id: TRgGRsfH635CSYGr2siYe7
   authors:
     - name: James Brown
-      contact: james@brown.com
+      email: james@brown.com
 
 colors:
   bg: "#FFF"

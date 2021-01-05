@@ -1,8 +1,9 @@
 version: 1
-kind: Workflow
+kind: Dataflow
 
 metadata:
-  workflow_name: TeamCliff > Sorbel
+  dataflow_name: TeamCliff > Sorbel
+  workflow_id: 6sTtscfdRyHEj77vh5SCtVSTJ6J7I8g7v6
   description: Lorem ipsum dolor sit amet
   authors:
     - name: James Brown
@@ -11,7 +12,6 @@ metadata:
 tasks:
   - app_name: TeamCliff
     app_id: 7Gfh5n3r2jV6KLvfg9mJGtwUji8v370hwgT
-    account_id: 6sTtscfdRyHEj77vh5SCtVSTJ6J7I8g7v6
     task_kind: trigger
     task_name: teamcliff
     task_index: 0
@@ -23,7 +23,6 @@ tasks:
 
   - app_name: Sorbel
     app_id: dEH3y6u7Bdt6vgh8t6e3yGBJmggJWl
-    account_id: hduTJetECrh6J2738TV6ssyt783nou
     task_kind: action
     task_name: sorbel
     task_index: 1
@@ -32,3 +31,9 @@ tasks:
     fields:
       email: "$(tasks[0].fields.email)" # reference by task index
       name: "$(tasks.sorbel.fields.email)" # reference by task name
+
+dataflow:
+  - task_index: 0
+    response_data: "{...}"
+  - task_index: 1
+    response_data: "{...}"

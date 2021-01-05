@@ -3,6 +3,7 @@ kind: App
 
 metadata:
   app_name: TeamCliff
+  app_version: v1.0.0
   description: Lorem ipsum dolor sit amet
   avatar_id: TRgGRsfH635CSYGr2siYe7
   homepage_url: teamcliff.io
@@ -10,7 +11,7 @@ metadata:
   tags: [accounting, productivity]
   authors:
     - name: James Brown
-      contact: james@brown.com
+      email: james@brown.com
 
 auths:
   - kind: oauth2 # Auth protocol
