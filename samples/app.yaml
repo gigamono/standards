@@ -2,13 +2,13 @@ version: 1
 kind: App
 
 metadata:
-  app_name: TeamCliff
-  app_version: v1.0.0
+  name: TeamCliff
+  version: 1.0.0
   description: Lorem ipsum dolor sit amet
-  avatar_id: TRgGRsfH635CSYGr2siYe7
-  homepage_url: teamcliff.io
   category: accounting
   tags: [accounting, productivity]
+  avatar_id: TRgGRsfH635CSYGr2siYe7
+  homepage_url: teamcliff.io
   authors:
     - name: James Brown
       email: james@brown.com
@@ -43,6 +43,7 @@ auths:
             - Apple
     api:
       code: null
+      language: null
       form:
         method: POST
         url: "https://api.teamcliff.io/auth"
@@ -51,13 +52,14 @@ auths:
         params: null
         body: null
 
-triggers:
-  - key: email
+operations:
+  - kind: search
+    key: email
     label: Email
     tip: Enter your email here
     auth_kinds: null
     is_required: true
-    is_destructive: false # If an operation that modifies or deletes resources.
+    is_write_op: false # If an operation that modifies or deletes resources.
     is_identification: true # If it is used to identify resource to operate on.
     resource_noun: email # A noun that best identifies what this trigger operates on.
     input_kind: select
@@ -68,6 +70,7 @@ triggers:
       options: "$(fields[0].email)"
     api:
       code: null
+      language: null
       form:
         method: POST
         url: "https://api.teamcliff.io/auth"
@@ -75,27 +78,3 @@ triggers:
         params: null
         body: null
 
-actions:
-  - action_kind: search
-    key: email
-    label: Email
-    tip: Enter your email here
-    auth_kinds: null
-    is_required: true
-    is_destructive: false
-    is_identification: true
-    noun: email
-    input_kind: select
-    dropdown:
-      kind: dynamic
-      allows_multiple: false
-      allows_custom: true
-      options: null
-    api:
-      code: null
-      form:
-        method: POST
-        url: "https://api.teamcliff.io/auth"
-        headers: null
-        params: null
-        body: null

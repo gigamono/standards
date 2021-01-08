@@ -2,37 +2,39 @@ version: 1
 kind: Dataflow
 
 metadata:
-  dataflow_name: TeamCliff > Sorbel
-  workflow_id: 6sTtscfdRyHEj77vh5SCtVSTJ6J7I8g7v6
+  name: TeamCliff > Sorbel
   description: Lorem ipsum dolor sit amet
+  workflow_id: 6sTtscfdRyHEj77vh5SCtVSTJ6J7I8g7v6
   authors:
     - name: James Brown
       email: james@brown.com
 
 tasks:
-  - app_name: TeamCliff
-    app_id: 7Gfh5n3r2jV6KLvfg9mJGtwUji8v370hwgT
-    task_kind: trigger
-    task_name: teamcliff
-    task_index: 0
+  - kind: trigger
+    name: teamcliff
+    index: 0
     dependencies: null
     position: [200, 150]
+    app_name: TeamCliff
+    app_id: 7Gfh5n3r2jV6KLvfg9mJGtwUji8v370hwgT
+    account_id: 6sTtscfdRyHEj77vh5SCtVSTJ6J7I8g7v6
     fields:
       email: james@brown.com
       name: James Brown
 
-  - app_name: Sorbel
-    app_id: dEH3y6u7Bdt6vgh8t6e3yGBJmggJWl
-    task_kind: action
-    task_name: sorbel
-    task_index: 1
-    dependencies: [0] # Task 0 depends on Task 1
+  - kind: action
+    name: sorbel
+    index: 1
+    dependencies: [0] # Task 1 depends on Task 0
     position: [400, 150]
+    app_name: Sorbel
+    app_id: dEH3y6u7Bdt6vgh8t6e3yGBJmggJWl
+    account_id: hduTJetECrh6J2738TV6ssyt783nou
     fields:
       email: "$(tasks[0].fields.email)" # reference by task index
       name: "$(tasks.sorbel.fields.email)" # reference by task name
 
-dataflow:
+dataflow: # Data are immutable.
   - task_index: 0
     response_data: "{...}"
   - task_index: 1
