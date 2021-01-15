@@ -3,6 +3,7 @@ kind: Theme
 
 metadata:
   name: SageDark
+  public_id: ceca68cb-facd-48d9-b3f6-884432867a44
   version: v1.0.0
   kind: dark
   description: Lorem ipsum dolor sit amet
