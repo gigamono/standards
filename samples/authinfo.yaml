@@ -3,17 +3,22 @@ kind: AuthInfo
 
 metadata:
   app_name: TeamCliff
-  app_id: 7Gfh5n3r2jV6KLvfg9mJGtwUji8v370hwgT
-  avatar_id: TRgGRsfH635CSYGr2siYe7
-  description: Lorem ipsum dolor sit amet
+  app_id: a9f55905-8dfb-46e7-9276-28e6b9a8360c # database id
   authors:
     - name: James Brown
       email: james@brown.com
 
-details:
-  auth_kind: api_key
-  auth_index: 0
-  fields:
-      email: james@brown.com
-      name: "James $(tasks[0].surname)"
+auths:
+  oauth2s:
+    - fields:
+        email: ["james@brown.com"]
+      envs:
+        client_id: 30cd9b75-1671-492a-9229-cf9d0e11cc49
+        client_secret: a9f55905-8dfb-46e7-9276-28e6b9a8360c
+        redirect_uri: authredirect.sageflow.io/app_redirect_id
 
+  api_keys:
+    - fields:
+        email: ["james@brown.com"]
+      envs:
+        api_key: 6c8bc128-d7de-46c0-8f18-ab2d75c922a1

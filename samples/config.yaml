@@ -1,0 +1,8 @@
+version: 1
+kind: Config
+
+metadata:
+  authors:
+    - name: James Brown
+      email: james@brown.com
+

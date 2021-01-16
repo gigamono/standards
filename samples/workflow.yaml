@@ -17,11 +17,11 @@ tasks:
     position: [200, 150]
     execution_context: protected
     app_name: TeamCliff
-    app_id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f
+    app_id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # database id
     account_id: 216e424e-0f1a-4a53-bdc2-27d6d277c347
     fields:
-      email: james@brown.com
-      name: James Brown
+      email: [james@brown.com]
+      name: [James Brown]
 
   - kind: action
     name: sorbel
@@ -33,5 +33,5 @@ tasks:
     app_id: ca41c8c5-dd47-4474-92ef-4b786b435663
     account_id: 647a954b-ed59-4ad5-990e-03f4177c57da
     fields:
-      email: "$(tasks[0].fields.email)" # reference by task index
-      name: "$(tasks.sorbel.fields.email)" # reference by task name
+      email: ["{{tasks[0].fields.email}}"] # reference by task index
+      name: ["{{tasks.sorbel.fields.email}}"] # reference by task name
