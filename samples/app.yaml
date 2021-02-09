@@ -10,7 +10,7 @@ metadata:
   tags:
     - accounting
     - productivity
-  avatar_id: TRgGRsfH635CSYGr2siYe7
+  avatar_id: 5ae00cd4-77bc-43ca-8122-1d6ea5c7bd5f
   homepage_url: teamcliff.io
   resource_nouns:
     - email
@@ -161,19 +161,23 @@ operations:
 
   actions:
     - action_kind: search
-      key: email
-      label: Email
-      tip: Enter your email here
-      is_required: true
-      is_write_op: false # If an operation that modifies or deletes resources.
-      is_identification: true # If it is used to identify resource to operate on.
-      resource_noun: email # A noun that best identifies what this trigger operates on.
-      input_kind: select
-      dropdown:
-        kind: dynamic
-        allows_multiple: false
-        allows_custom: true
-        options: "{{fields[0].email}}"
+      key: add_email_subscriber
+      label: Add Email Subscriber
+      tip: Adds a new email subscriber
+      fields:
+      - key: email
+        label: Email
+        tip: Enter your email here
+        is_required: true
+        is_write_op: false # If an operation that modifies or deletes resources.
+        is_identification: true # If it is used to identify resource to operate on.
+        resource_noun: email # A noun that best identifies what this trigger operates on.
+        input_kind: select
+        dropdown:
+          kind: dynamic
+          allows_multiple: false
+          allows_custom: true
+          options: "{{fields[0].email}}"
       api:
         code: null
         language: null
