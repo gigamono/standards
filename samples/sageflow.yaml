@@ -25,3 +25,6 @@ database:
     uri: ""
     kind: "postgres"
 
+secrets_manager:
+  kind: env
+
