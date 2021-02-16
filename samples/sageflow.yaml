@@ -17,14 +17,6 @@ server:
   auth:
     port: 3002
 
-database:
-  resource:
-    uri: ""
-    kind: "postgres"
-  auth:
-    uri: ""
-    kind: "postgres"
-
 secrets_manager:
   kind: env
 
