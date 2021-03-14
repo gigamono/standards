@@ -9,13 +9,15 @@ metadata:
 execution:
   use_subprocess: true
 
-server:
-  api:
-    port: 3000
-  engine:
-    port: 3001
-  auth:
-    port: 3002
+services:
+  tls: null
+  types:
+    api:
+      port: 3000
+    engine:
+      port: 3001
+    auth:
+      port: 3002
 
 secrets_manager:
   kind: env
