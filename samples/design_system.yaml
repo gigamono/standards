@@ -1,0 +1,12 @@
+version: 1
+kind: DesignSystem
+
+metadata:
+  name: NeoCRM System
+  authors:
+    - name: James Brown
+      email: james@brown.com
+
+components:
+
+fonts:

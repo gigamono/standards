@@ -1,0 +1,16 @@
+version: 1
+kind: App
+
+metadata:
+  name: NeoCRM
+  authors:
+    - name: James Brown
+      email: james@brown.com
+
+design:
+
+dashboard:
+
+workflow:
+
+document:

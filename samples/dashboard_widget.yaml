@@ -1,0 +1,8 @@
+version: 1
+kind: DashboardWidget
+
+metadata:
+  name: Gantt Chart
+  authors:
+    - name: James Brown
+      email: james@brown.com

@@ -1,0 +1,8 @@
+version: 1
+kind: Document
+
+metadata:
+  name: Customers
+  authors:
+    - name: James Brown
+      email: james@brown.com

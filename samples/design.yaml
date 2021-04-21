@@ -1,0 +1,8 @@
+version: 1
+kind: Design
+
+metadata:
+  name: NeoCRM Design
+  authors:
+    - name: James Brown
+      email: james@brown.com
