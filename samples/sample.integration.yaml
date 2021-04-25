@@ -2,7 +2,7 @@ version: 1
 kind: Integration
 
 metadata:
-  name: TeamCliff
+  name: Facebook
   public_id: b780d792-bb57-4e29-a4a4-578d8db3bec9
   version: 1.0.0
   description: Lorem ipsum dolor sit amet
