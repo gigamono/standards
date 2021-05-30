@@ -11,39 +11,37 @@ metadata:
     - name: James Brown
       email: james@brown.com
 
+integrations:
+  - name: Active Campaign
+    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # database id
+    file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+
 steps:
-  - kind: trigger
-    name: teamcliff
-    index: 0
+  - index: 0
+    integration_index: 0
+    operation_key: new_email_subscriber
+    label: Add a new subscriber
     dependencies: null
-    builtin: null
-    integration:
-      name: TeamCliff
-      id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # database id
     fields:
-      email: [james@brown.com]
-      name: [James Brown]
+      email: "james@brown.com"
+      name: "James Brown"
 
-  - kind: action
-    name: sorbel
-    index: 1
+  - index: 1
+    integration_index: 0
+    operation_key: new_email_subscriber
+    label: Add a new subscriber
     dependencies: [0] # Step 1 depends on Step 0
-    builtin: null
-    integration:
-      name: Sorbel
-      id: ca41c8c5-dd47-4474-92ef-4b786b435663
     fields:
-      email: ["{{steps[0].fields.email}}"] # reference by step index
-      name: ["{{steps.sorbel.fields.email}}"] # reference by step name
+      email: "{{selectStep(0).output.email}}"
+      name: "{{selectStep(0).output.name}}"
 
-  - kind: action
-    name: transform
-    index: 1
+  - index: 2
+    integration: null # null integration means operation is builtin.
+    operation_key: transform
+    label: Transform email
     dependencies: [1] # Step 2 depends on Step 1
-    builtin: Transform
-    integration: null
     fields:
-      email: ["{{steps[0].fields.email}}"] # reference by step index
+      email: "{{selectStep(1).output.email}}"
 
 layout:
   highestIndex: 3 # SEC: Must validate.
