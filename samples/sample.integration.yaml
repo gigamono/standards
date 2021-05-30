@@ -2,7 +2,7 @@ version: 1
 kind: Integration
 
 metadata:
-  name: Facebook
+  name: Active Campaign
   public_id: b780d792-bb57-4e29-a4a4-578d8db3bec9
   version: 1.0.0
   description: Lorem ipsum dolor sit amet
@@ -10,7 +10,7 @@ metadata:
   tags:
     - accounting
     - productivity
-  avatar_url: gigamono://image/3jOApF4U10rBe0LL4ekuUA/avatar-32.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.png
+  avatar_url: www.gigamono.com/image/3jOApF4U10rBe0LL4ekuUA/avatar-32.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.png
   homepage_url: teamcliff.io
   resource_nouns:
     - email
