@@ -8,20 +8,21 @@ metadata:
     - name: James Brown
       email: james@brown.com
 
-source:
-  builtin: null # e.g. MySQL, Postgres, ...
-  integration: # Any action named `fetch_document` is used to fetch initial data.
-    name: Facebook
-    id: 807a31fe-cb1d-4a1a-bd38-3e7228e4ac94
+data_fetch_workflow: # The workflow for fetching source data. Workflows like are hidden by default.
+  name: Fetch Active Campaign Email Subscribers
+  id: 2f5d951c-dd3c-4f87-a790-0f8fb78fc405 # database id
+  specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/workflow.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+  inputs: # Calls the workflow like a function.
+    offset: "{{tableVariables().offset}}"
+    limit: "{{tableVariables().limit}}"
+
+schema:
+    - name: Name
+      kind: single_line_text
+    - name: Available Products
+      kind: relationship
 
 views:
-  - name: Customers
-    schema:
-        - name: Name
-          kind: single_line_text
-        - name: Available Products
-          kind: relationship
-
     table:
       grouped_by:
         - state

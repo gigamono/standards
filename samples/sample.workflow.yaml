@@ -5,8 +5,7 @@ metadata:
   name: TeamCliff > Sorbel > Transform
   description: Lorem ipsum dolor sit amet
   tags:
-    - protected
-    - backend
+    - sandbox
   authors:
     - name: James Brown
       email: james@brown.com
@@ -14,47 +13,64 @@ metadata:
 integrations:
   - name: Active Campaign
     id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # database id
-    file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+    specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+
+  - name: Function Call
+    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f
+    specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+
+  - name: String Operation
+    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f
+    specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
+
+  - name: Document
+    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f
+    specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
 
 steps:
-  - index: 0
+  0:
     integration_index: 0
     operation_key: new_email_subscriber
-    label: Add a new subscriber
+    label: A new subscriber
     dependencies: null
-    fields:
-      email: "james@brown.com"
-      name: "James Brown"
+    inputs: null
 
-  - index: 1
+  1:
+    integration_index: 1
+    operation_key: null
+    label: Direct call
+    dependencies: null
+    inputs:
+      parameters: [["email", "text"], ["name", "text"]]
+
+  2:
+    integration: 2
+    operation_key: null
+    label: Fixable email
+    dependencies: [0, 1]
+    inputs:
+      text: "{{replace(input().email, '.xom', '.com')}}"
+
+  3:
     integration_index: 0
-    operation_key: new_email_subscriber
-    label: Add a new subscriber
-    dependencies: [0] # Step 1 depends on Step 0
-    fields:
-      email: "{{selectStep(0).output.email}}"
-      name: "{{selectStep(0).output.name}}"
+    operation_key: add_row
+    label: Save new subscriber
+    dependencies: [2]
+    inputs:
+      project: Main
+      table: subscribers
+      entries: [["{{input().email}}", "email"], ["{{input().name}}", "name"]]
 
-  - index: 2
-    integration: null # null integration means operation is builtin.
-    operation_key: transform
-    label: Transform email
-    dependencies: [1] # Step 2 depends on Step 1
-    fields:
-      email: "{{selectStep(1).output.email}}"
 
 layout:
   highestIndex: 3 # SEC: Must validate.
   containerBounds:
-    x: null
-    y: null
-    width: null
-    height: null
+    x: -200
+    y: -200
+    width: 400
+    height: 400
 
   stepsPositioning:
     0:
-      top: null
-      left: null
-    1:
-      top: null
-      left: null
+      top: 0
+      left: 200

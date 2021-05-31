@@ -7,11 +7,13 @@ metadata:
   version: 1.0.0
   description: Lorem ipsum dolor sit amet
   category: accounting
+  builtin: false
   tags:
     - accounting
     - productivity
   avatar_url: www.gigamono.com/image/3jOApF4U10rBe0LL4ekuUA/avatar-32.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.png
-  homepage_url: teamcliff.io
+  homepage_url: https://activecampaign.com
+  api_docmentation_url: https://developers.activecampaign.com
   resource_nouns:
     - email
   authors:
@@ -24,8 +26,8 @@ auths:
       scopes:
         - send_email
       should_refresh_automatically: true
-      fields:
-        - key: email # Used to refer to this field
+      inputs:
+        email: # Used to refer to this field
           label: Email # User friendly label. Some markdown formatting allowed
           tip: Enter your email here # User friendly description.
           is_required: true # If field has to be filled.
@@ -73,8 +75,8 @@ auths:
             body: null
   api_keys:
     - label: API Key
-      fields:
-        - key: workspace
+      inputs:
+        workspace:
           label: Workspace
           tip: Select workspace
           is_required: true
@@ -100,11 +102,11 @@ auths:
 
 operations:
   triggers:
-    - key: new_email_subscriber
+    new_email_subscriber:
       label: New Email Subscriber
       tip: Triggers when there is a new email subscriber
-      fields:
-        - key: email
+      inputs:
+        email:
           label: Email
           tip: Enter your email here
           is_required: true
@@ -116,7 +118,7 @@ operations:
             kind: dynamic
             allows_multiple: false
             allows_custom: true
-            options: "{{fields[0].email}}"
+            options: "{{inputs[0].email}}"
       apis:
         polls:
           - auth_kind: null
@@ -158,26 +160,25 @@ operations:
                   headers: null
                   params: null
                   body: null
-
   actions:
-    - action_kind: search
-      key: add_email_subscriber
+    add_email_subscriber:
+      action_kind: search
       label: Add Email Subscriber
       tip: Adds a new email subscriber
-      fields:
-      - key: email
-        label: Email
-        tip: Enter your email here
-        is_required: true
-        is_write_op: false # If an operation that modifies or deletes resources.
-        is_identification: true # If it is used to identify resource to operate on.
-        resource_noun: email # A noun that best identifies what this trigger operates on.
-        input_kind: select
-        dropdown:
-          kind: dynamic
-          allows_multiple: false
-          allows_custom: true
-          options: "{{fields[0].email}}"
+      inputs:
+        email:
+          label: Email
+          tip: Enter your email here
+          is_required: true
+          is_write_op: false # If an operation that modifies or deletes resources.
+          is_identification: true # If it is used to identify resource to operate on.
+          resource_noun: email # A noun that best identifies what this trigger operates on.
+          input_kind: select
+          dropdown:
+            kind: dynamic
+            allows_multiple: false
+            allows_custom: true
+            options: "{{fields[0].email}}"
       api:
         code: null
         language: null
