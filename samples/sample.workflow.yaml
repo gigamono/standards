@@ -12,7 +12,7 @@ metadata:
 
 integrations:
   - name: Active Campaign
-    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # database id
+    id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f # Database id
     specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
 
   - name: Function Call
@@ -28,42 +28,44 @@ integrations:
     specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
 
 steps:
-  0:
-    integration_index: 0
-    operation_key: new_email_subscriber
-    label: A new subscriber
-    dependencies: null
-    inputs: null
+  max: 3
+  items:
+    0:
+      integration: 0
+      operation_key: new_email_subscriber
+      label: A new subscriber
+      dependencies: null
+      # credentials_id: ... # Database id
+      inputs: null
 
-  1:
-    integration_index: 1
-    operation_key: null
-    label: Direct call
-    dependencies: null
-    inputs:
-      parameters: [["email", "text"], ["name", "text"]]
+    1:
+      integration: 1
+      operation_key: null
+      label: Direct call
+      dependencies: null
+      inputs:
+        parameters: [["email", "text"], ["name", "text"]]
 
-  2:
-    integration: 2
-    operation_key: null
-    label: Fixable email
-    dependencies: [0, 1]
-    inputs:
-      text: "{{replace(input().email, '.xom', '.com')}}"
+    2:
+      integration: 2
+      operation_key: null
+      label: Fixable email
+      dependencies: [0, 1]
+      inputs:
+        text: "{{replace(input().email, '.xom', '.com')}}"
 
-  3:
-    integration_index: 0
-    operation_key: add_row
-    label: Save new subscriber
-    dependencies: [2]
-    inputs:
-      project: Main
-      table: subscribers
-      entries: [["{{input().email}}", "email"], ["{{input().name}}", "name"]]
+    3:
+      integration: 3
+      operation_key: add_row
+      label: Save new subscriber
+      dependencies: [2]
+      inputs:
+        project: Main
+        table: subscribers
+        entries: [["{{input().email}}", "email"], ["{{input().name}}", "name"]]
 
 
 layout:
-  highestIndex: 3 # SEC: Must validate.
   containerBounds:
     x: -200
     y: -200
