@@ -4,6 +4,7 @@ kind: Workflow
 metadata:
   name: TeamCliff > Sorbel > Transform
   description: Lorem ipsum dolor sit amet
+  workflow_kind: backend
   tags:
     - sandbox
   authors:
