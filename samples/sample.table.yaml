@@ -1,5 +1,5 @@
 version: 1
-kind: Document
+kind: Table
 
 metadata:
   name: Products
@@ -56,7 +56,7 @@ schema: # The current schema
       13:
         name: Liked Products
         kind: relationship
-        linked_document:
+        linked_table:
           id: 24f495c3-7fc6-4bea-bf7a-adb0a955a54f
           specification_file_url: www.gigamono.com/project/3jOApF4U10rBe0LL4ekuUA/integration.VvahTjdfR1O7h_KtP_0yZA.ul9CkhJsSAKdiOXwjpX5SA.json
           field: 10

@@ -1,8 +1,8 @@
 version: 1
-kind: DesignWidget
+kind: Board
 
 metadata:
-  name: Gantt Chart
+  name: Main Business Events
   authors:
     - name: James Brown
       email: james@brown.com
