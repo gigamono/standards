@@ -1,5 +1,5 @@
 version: 1
-kind: App
+kind: System
 
 metadata:
   name: NeoCRM
@@ -7,10 +7,10 @@ metadata:
     - name: James Brown
       email: james@brown.com
 
-design:
+apps:
 
-dashboard:
+decks:
 
-workflow:
+automations:
 
-document:
+bases:
