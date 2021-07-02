@@ -1,8 +1,8 @@
 version: 1
-kind: App
+kind: UI
 
 metadata:
-  name: New App
+  name: New UI
   authors:
     - name: James Brown
       email: james@brown.com
