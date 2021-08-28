@@ -11,8 +11,8 @@ Also it allows extensions to make decisions at runtime about the final look of s
         - The type(s) of plugin (it restricts what APIs the plugin can use)
         - Theming, Templating and Extension UI _can_ be specified statically
     - Dynamic parts
-        - Frontend logic
-        - Backemd logic
+        - Sandboxed permission-based frontend logic
+        - Serverless permission-based backend logic
 
 - Permission-based Runtime
     - Scope (Workspace, Project, etc.)
@@ -41,3 +41,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - theme.yaml
     - frontend/
     - backend/
+
+- Examples
+    - SEO Extension (like Yoast or RankMath)
+    - AI Copilot (with OpenAI Codex)
