@@ -15,6 +15,8 @@ Also it allows extensions to make decisions at runtime about the final look of s
         - Backemd logic
 
 - Permission-based Runtime
+    - Scope (Workspace, Project, etc.)
+    - Granular (Tables, etc.)
 
 - API Access 
     - User's Projects
@@ -33,3 +35,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Credentials 
 
 - Dataflow shouldn't be a specification. It could be a log stored in the db or file.
+
+- Folder structure
+    - extension.yaml
+    - theme.yaml
+    - frontend/
+    - backend/
