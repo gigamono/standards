@@ -2,27 +2,27 @@
 
 ### Simplifying Extensions
 
-I'm simplifying extensions by making them have runnable logic. 
+I'm simplifying extensions by making them have runnable logic.
 This should make it easier to create a flexible API.
 Also it allows extensions to make decisions at runtime about the final look of something.
 
 - Specification
-    - Static parts 
+    - Static parts
         - The type(s) of plugin (it restricts what APIs the plugin can use)
         - Theming, Templating and Extension UI _can_ be specified statically
-    - Dynamic parts 
-        - Frontend logic 
+    - Dynamic parts
+        - Frontend logic
         - Backemd logic
 
 - Permission-based Runtime
     - Scope (Workspace, Project, etc.)
     - Granular (Tables, etc.)
 
-- API Access 
+- API Access
     - User's Projects
     - Theming
     - Templating
-    - Extension UI
+    - Extension UI (Could be based on Board)
         - Page
         - Modal
 
@@ -30,9 +30,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - Specifications that remain
     - Sageflow
-    - Projects 
+    - Projects
     - Tabs
-    - Credentials 
+    - Credentials
 
 - Dataflow shouldn't be a specification. It could be a log stored in the db or file.
 
