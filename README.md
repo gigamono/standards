@@ -28,31 +28,47 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
       Embedded logic are run along with the app. They are essentially an extension to an app and can be considered part of the app's logic.
 
-      An extension can add frontend logic as well as backend logic to an app.
+      An extension can add to a frontend ui and  logic as well as backend logic.
 
       The logic can be visual workflows or custom code.
 
       All executions are permission-based.
+
+- UI Types
+
+  - Page (Allows for shortcut)
+  - Modal
+  - Full Sidebar
+  - Sidebar Section
+  - In-place Widget Controls (buttons, selection border, etc.)
 
 - Permission-based Runtime
 
   - Scope (Workspace, Project, etc.)
   - Granular (Tables, etc.)
 
-- API Access
+- API
 
   - User's Projects
   - Theming
   - Templating
+  - Pricing (pricing matrix, sliders, subscription types, etc.)
+  - UI Type
+  - Readme (Deck)
+  - Hooks
+    - request middleware
+    - on startup
+    - etc.
 
 - Systems and Templates are just a type of extension.
 
 - Specifications that remain
 
   - Sageflow
-  - Projects
-  - Tabs
+  - Projects (Decks, Frontends, Backends, Bases)
+  - Tabs (Deck Pages, Frontend Pages, Workflows, Tables)
   - Credentials
+  - Themes
 
 - Dataflow shouldn't be a specification. It could be a log stored in the db or file.
 
@@ -63,7 +79,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - frontend/
   - backend/
 
-- Examples
-  - SEO Extension (like Yoast or RankMath)
-  - Analytics Extension (like Google Analytics)
-  - Copilot Extension (with OpenAI Codex)
+- Extensions to build
+  - Workspace Auth (Special Extension, gets updated by the system) - Free
+  - Security Audit (checks for XSS, Data leak, etc.) - Free
+  - SEO (like Yoast or RankMath) - Freemium
+  - Analytics (mix of Google Analytics and HotJar) - Freemium
+  - Copilot (with OpenAI Codex) - Freemium
