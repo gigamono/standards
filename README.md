@@ -34,13 +34,13 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
       All executions are permission-based.
 
-- UI Types
+- Extension UI
 
-  - Page (Allows for shortcut)
   - Modal
   - Full Sidebar
   - Sidebar Section
-  - In-place Widget Controls (buttons, selection border, etc.)
+  - Sidebar Widget
+  - Canvas Widget (Shown in the canvas, like element selection widget for example)
 
 - Permission-based Runtime
 
@@ -49,24 +49,30 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - API
 
-  - User's Projects
+  - User's Projects (CRUD)
   - Theming
   - Templating
-  - Pricing (pricing matrix, sliders, subscription types, etc.)
-  - UI Type
-  - Readme (Deck)
+  - Integrating
+    - Credential access
+    - Authentication
+    - Metadata (action, trigger, etc.)
   - Hooks
-    - request middleware
-    - on startup
+    - Request middleware
+    - Start hook
     - etc.
+  - Extension UI
+  - Extension Wiki (Deck)
+  - Extension Pricing (pricing matrix, sliders, subscription types, etc.)
+  - Extension Uninstallation (Required)
 
-- Systems and Templates are just a type of extension.
 
-- Specifications that remain
+- Systems, Templates, Integrations are just a type of extension.
 
-  - Sageflow
+- Specifications
+
+  - Gigamono Config
   - Projects (Decks, Frontends, Backends, Bases)
-  - Tabs (Deck Pages, Frontend Pages, Workflows, Tables)
+    - Tabs (Deck Pages, Frontend Pages, Workflows, Tables)
   - Credentials
   - Themes
 
@@ -80,8 +86,13 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - backend/
 
 - Extensions to build
+  - Theming (for creating themes) - Free
   - Workspace Auth (Special Extension, gets updated by the system) - Free
   - Security Audit (checks for XSS, Data leak, etc.) - Free
   - SEO (like Yoast or RankMath) - Freemium
   - Analytics (mix of Google Analytics and HotJar) - Freemium
   - Copilot (with OpenAI Codex) - Freemium
+  - Testing (on save, on commit, on preview, etc.) - Free
+    - Unit Tests (for logic)
+    - Integration Tests (for backend logic)
+    - End to End Tests (for interactions)
