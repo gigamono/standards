@@ -40,7 +40,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Full Sidebar
   - Sidebar Section
   - Sidebar Widget
-  - Canvas Widget (Shown in the canvas, like element selection widget for example)
+  - Editor Experience Widgets
 
 - Permission-based Runtime
 
@@ -60,6 +60,10 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Request middleware
     - Start hook
     - etc.
+  - Editor Experience (like in VSCode)
+    - Typing (Auto-complete, etc.)
+    - Selection Widget
+  - Keyboard Shortcuts
   - Extension UI
   - Extension Wiki (Deck)
   - Extension Pricing (pricing matrix, sliders, subscription types, etc.)
@@ -92,6 +96,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - SEO (like Yoast or RankMath) - Freemium
   - Analytics (mix of Google Analytics and HotJar) - Freemium
   - Copilot (with OpenAI Codex) - Freemium
+    - Copy writing
   - Testing (on save, on commit, on preview, etc.) - Free
     - Unit Tests (for logic)
     - Integration Tests (for backend logic)
