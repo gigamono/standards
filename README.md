@@ -101,3 +101,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Unit Tests (for logic)
     - Integration Tests (for backend logic)
     - End to End Tests (for interactions)
+
+
+- Permissions
+  - Permissions are static snippets. They are removed when a user accepts them before runtime.
