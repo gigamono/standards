@@ -28,7 +28,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
       Embedded logic are run along with the app. They are essentially an extension to an app and can be considered part of the app's logic.
 
-      An extension can add to a frontend ui and  logic as well as backend logic.
+      An extension can add to a frontend ui and logic as well as backend logic.
 
       The logic can be visual workflows or custom code.
 
@@ -36,6 +36,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - Extension UI
 
+  - Full Page (added to shortcuts at the bottom)
   - Modal
   - Full Sidebar
   - Sidebar Section
@@ -69,7 +70,6 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Extension Pricing (pricing matrix, sliders, subscription types, etc.)
   - Extension Uninstallation (Required)
 
-
 - Systems, Templates, Integrations are just a type of extension.
 
 - Specifications
@@ -90,7 +90,10 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - backend/
 
 - Extensions to build
+
+  - ECommerce (for creating stores) - Freemium
   - Theming (for creating themes) - Free
+  - CMS (for managing content) - Free
   - Workspace Auth (Special Extension, gets updated by the system) - Free
   - Security Audit (checks for XSS, Data leak, etc.) - Free
   - SEO (like Yoast or RankMath) - Freemium
@@ -102,6 +105,6 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Integration Tests (for backend logic)
     - End to End Tests (for interactions)
 
-
-- Permissions
+- Security
   - Permissions are static snippets. They are removed when a user accepts them before runtime.
+  - Installed extensions page has permission setting (like in Android)
