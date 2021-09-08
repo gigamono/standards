@@ -36,12 +36,13 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - Extension UI
 
-  - Full Page (added to shortcuts at the bottom)
-  - Modal
-  - Full Sidebar
-  - Sidebar Section
-  - Sidebar Widget
-  - Editor Experience Widgets
+  - Full Page (shortcut)
+  - Editor/Preview Modal
+  - Editor/Preview Sidebar
+  - Editor/Preview Specific Sidebar Section
+  - Editor/Preview Specific Sidebar Widget
+  - Editor/Preview In-Canvas Widget
+  - Editor/Preview Bottom Bar
 
 - Permission-based Runtime
 
