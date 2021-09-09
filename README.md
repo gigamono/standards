@@ -92,9 +92,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - Extensions to build
 
-  - ECommerce (for creating stores) - Freemium
+  - E-Commerce (for creating stores) - Freemium
   - Theming (for creating themes) - Free
-  - CMS (for managing content) - Free
+  - CMS [Multilingual] (for managing content) - Free
   - Workspace Auth (Special Extension, gets updated by the system) - Free
   - Security Audit (checks for XSS, Data leak, etc.) - Free
   - SEO (like Yoast or RankMath) - Freemium
@@ -105,6 +105,8 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Unit Tests (for logic)
     - Integration Tests (for backend logic)
     - End to End Tests (for interactions)
+  - Social Media - Freemium
+  - Forum - Freemium
 
 - Security
   - Permissions are static snippets. They are removed when a user accepts them before runtime.
