@@ -34,28 +34,45 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
       All executions are permission-based.
 
+- Plugin Types
+
+  - Extensions (runs in a specific arena)
+  - Apps
+
+- App UI
+
+  Gets a dedicated section.
+
+  - Canvas
+  - Modal
+  - Context Menu
+  - Sidebar
+  - Sidebar Section
+  - Sidebar Widget
+  - Bottom Bar
+
 - Extension UI
 
-  - Full Page (shortcut)
-  - Editor/Preview Modal
-  - Editor/Preview Context Menu
-  - Editor/Preview Sidebar
-  - Editor/Preview Specific Sidebar Section
-  - Editor/Preview Specific Sidebar Widget
-  - Editor/Preview In-Canvas Widget
-  - Editor/Preview Bottom Bar
-  - Editor Block
-  - Custom Canvas
+  Runs within an app.
+
+  - Modal
+  - Context Menu
+  - Sidebar
+  - Sidebar Section
+  - Sidebar Widget
+  - Bottom Bar
+  - In-Canvas Widget
+  - Stock Apps
+    - Editor Block
 
 - Permission-based Runtime
 
   - Scope (Workspace, Project, etc.)
   - Granular (Tables, etc.)
 
-- API
+- Stock Apps Extension APIs
 
   - User's Projects (CRUD)
-  - Theming
   - Templating
   - Integrating
     - Credential access
@@ -68,32 +85,39 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Editor Experience (like in VSCode)
     - Typing (Auto-complete, etc.)
     - Selection Widget
+
+- Core Extension APIs
+
   - Keyboard Shortcuts
-  - Extension UI
-  - Extension Wiki (Deck)
-  - Extension Pricing (pricing matrix, sliders, subscription types, etc.)
-  - Extension Uninstallation (Required)
+  - UI
+  - Wiki (Deck)
+  - Pricing (pricing matrix, sliders, subscription types, etc.)
+  - Installation & Uninstallation (Required)
+  - Theming
 
-- Custom Extension API
+- Core App APIs
 
-  - Developers can add custom APIs to their extensions that other developers can access.
-  - There is a specification interface.
+  - UI
+  - Extension Interface
+  - Settings Interface
+  - Keyboard Shortcuts
+  - UI
+  - Wiki (Deck)
+  - Pricing (pricing matrix, sliders, subscription types, etc.)
+  - Installation & Uninstallation (Required)
 
-- Custom Settings API
+- Core Backend APIs
 
-  - Developers can add their own settings that appear on the settings page.
+  - Frontend management and publishing
+  - Serveless management and execution
+  - Database management and querying
+  - Files management
+  - Apps and Extensions Marketplace (???)
 
 - Systems, Templates, Integrations are just a type of extension.
 
-- Specifications
 
-  - Gigamono Config
-  - Projects (Decks, Frontends, Backends, Bases)
-    - Tabs (Deck Pages, Frontend Pages, Workflows, Tables)
-  - Credentials
-  - Themes
-  - Custom Extension API
-  - Custom Settings API
+
 
 - Dataflow shouldn't be a specification. It could be a log stored in the db or file.
 
