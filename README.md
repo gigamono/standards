@@ -40,6 +40,9 @@ Also it allows plugins to make decisions at runtime about the final look of some
 - Framework UI
 
   Gets a dedicated section.
+  There are two types of view. The Main view and the Previews.
+  The Deck Framework for example has multiple Previews (Slide Preview and Site Preview)
+  All Previews have HMR.
 
   - Main, Preview
     - Canvas
