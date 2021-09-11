@@ -35,13 +35,13 @@ Also it allows plugins to make decisions at runtime about the final look of some
 - Plugin Types
 
   - Extensions (runs in a specific arena)
-  - Frameworks
+  - Subapps
 
-- Framework UI
+- Subapp UI
 
   Gets a dedicated section.
   There are two types of view. The Main view and the Previews.
-  The Deck Framework for example has multiple Previews (Slide Preview and Site Preview)
+  The Deck Subapp for example has multiple Previews (Slide Preview and Site Preview)
   All Previews have HMR.
 
   - Main, Preview
@@ -55,7 +55,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
 
 - Extension UI
 
-  Runs within a framework.
+  Runs within a subapp.
 
   - Modal
   - Context Menu
@@ -64,7 +64,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - Sidebar Widget
   - Bottom Bar
   - In-Canvas Widget
-  - Core Frameworks
+  - Core Subapps
     - Editor Block
 
 - Permission-based Runtime
@@ -72,7 +72,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - Scope (Workspace, Project, etc.)
   - Granular (Tables, etc.)
 
-- Core Frameworks Extension APIs
+- Core Subapps Extension APIs
 
   - User's Projects (CRUD)
   - Templating
@@ -97,7 +97,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - Installation & Uninstallation (Required)
   - Theming
 
-- Framework APIs
+- Subapp APIs
 
   - UI
   - Extension Interface
@@ -113,7 +113,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - Serveless management and execution
   - Database management and querying
   - Files management
-  - Frameworks and Extensions Marketplace (???)
+  - Subapps and Extensions Marketplace (???)
 
 - Systems, Templates, Integrations are just a type of extension.
 
