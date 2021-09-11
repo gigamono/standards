@@ -1,10 +1,10 @@
 # SPECIFICATIONS & EXTENSIONS
 
-### Simplifying Extensions
+### Simplifying Plugins
 
-I'm simplifying extensions by making them have runnable logic.
+I'm simplifying plugins by making them have runnable logic.
 This should make it easier to create a flexible API.
-Also it allows extensions to make decisions at runtime about the final look of something.
+Also it allows plugins to make decisions at runtime about the final look of something.
 
 - Specification
 
@@ -12,13 +12,11 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
     - The type(s) of plugin (it restricts what APIs the plugin can use)
 
-    - Theming, Templating and Extension UI _can_ be specified statically
-
   - Dynamic parts (Permission-based)
 
-    - Extension logic
+    - Plugin logic
 
-      An extension is basically a deck with frontend logic and an optional backend logic.
+      A plugin is basically a deck with frontend logic and an optional backend logic.
 
       The logic can be visual workflows or custom code.
 
@@ -26,9 +24,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
     - Embedded logic
 
-      Embedded logic are run along with the app. They are essentially an extension to an app and can be considered part of the app's logic.
+      Embedded logic are run along with the app. They are essentially an plugin to an app and can be considered part of the app's logic.
 
-      An extension can add to a frontend ui and logic as well as backend logic.
+      An plugin can add to a frontend ui and logic as well as backend logic.
 
       The logic can be visual workflows or custom code.
 
@@ -37,9 +35,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
 - Plugin Types
 
   - Extensions (runs in a specific arena)
-  - Apps
+  - Frameworks
 
-- App UI
+- Framework UI
 
   Gets a dedicated section.
 
@@ -54,7 +52,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
 - Extension UI
 
-  Runs within an app.
+  Runs within a framework.
 
   - Modal
   - Context Menu
@@ -63,7 +61,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Sidebar Widget
   - Bottom Bar
   - In-Canvas Widget
-  - Stock Apps
+  - Core Frameworks
     - Editor Block
 
 - Permission-based Runtime
@@ -71,7 +69,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Scope (Workspace, Project, etc.)
   - Granular (Tables, etc.)
 
-- Stock Apps Extension APIs
+- Core Frameworks Extension APIs
 
   - User's Projects (CRUD)
   - Templating
@@ -87,7 +85,7 @@ Also it allows extensions to make decisions at runtime about the final look of s
     - Typing (Auto-complete, etc.)
     - Selection Widget
 
-- Core Extension APIs
+- Extension APIs
 
   - Keyboard Shortcuts
   - UI
@@ -96,13 +94,12 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Installation & Uninstallation (Required)
   - Theming
 
-- Core App APIs
+- Framework APIs
 
   - UI
   - Extension Interface
   - Settings Interface
   - Keyboard Shortcuts
-  - UI
   - Wiki (Deck)
   - Pricing (pricing matrix, sliders, subscription types, etc.)
   - Installation & Uninstallation (Required)
@@ -113,12 +110,9 @@ Also it allows extensions to make decisions at runtime about the final look of s
   - Serveless management and execution
   - Database management and querying
   - Files management
-  - Apps and Extensions Marketplace (???)
+  - Frameworks and Extensions Marketplace (???)
 
 - Systems, Templates, Integrations are just a type of extension.
-
-
-
 
 - Dataflow shouldn't be a specification. It could be a log stored in the db or file.
 
