@@ -43,13 +43,14 @@ Also it allows extensions to make decisions at runtime about the final look of s
 
   Gets a dedicated section.
 
-  - Canvas
-  - Modal
-  - Context Menu
-  - Sidebar
-  - Sidebar Section
-  - Sidebar Widget
-  - Bottom Bar
+  - Main, Preview
+    - Canvas
+    - Modal
+    - Context Menu
+    - Sidebar
+    - Sidebar Section
+    - Sidebar Widget
+    - Bottom Bar
 
 - Extension UI
 
