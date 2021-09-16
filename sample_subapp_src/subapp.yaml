@@ -11,4 +11,6 @@ frontend:
     index: ./frontend/canvas/index.js
     type: svelte
 
-extensionAPI:
+backends:
+
+extensionAPIs:

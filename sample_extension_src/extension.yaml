@@ -14,5 +14,7 @@ frontend:
     - name: selector
       type: sidebar
 
+backends:
+
 extensions:
   - gigamono.sample_app
