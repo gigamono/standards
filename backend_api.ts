@@ -1,13 +1,22 @@
+/* LIFECYCLE
+ *
+ * Middleware
+ * - You can register a function as a middleware.
+ *
+ * Extensions
+ * - You can regiester Loaded with a subapp.
+ *
+ *
+ */
+
+
 //------------------- db -------------------
 
-export function connect(): DB { return new DB() }
+export function from(model: String): Model { return new Model() }
 
-class DB {
-  model(): Model { return new Model() }
+class Model {
+  by(id: String): any {}
 }
-
-class Model {}
-
 //------------------- fs -------------------
 
 export function open(): File { return new File() }
@@ -16,19 +25,13 @@ class File {
   read(): String { return "" }
 }
 
-//------------------- cache -------------------
+//------------------- memcache -------------------
 
 export function memoryCache(): MemoryCache { return new MemoryCache() }
-export function volumeCache(): VolumeCache { return new VolumeCache() }
 
 class MemoryCache {
   set(key: String, value: any) {}
   get(key: String): any {}
-}
-
-class VolumeCache {
-  set(path: String, value: String) {}
-  get(path: String): String { return "" }
 }
 
 //------------------- http -------------------
@@ -49,5 +52,3 @@ class User {
 }
 
 //------------------- subapp -------------------
-
-//------------------- extension -------------------

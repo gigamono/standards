@@ -1,0 +1,14 @@
+meta:
+  version: 0.0.1
+  author: Stephen Akinyemi
+  name: sample
+  type: extension
+
+keyboardShortcuts:
+  - name: select
+    keys: ['cmd', 'l']
+
+ui:
+  sidebar:
+    - name: top
+      type: section
