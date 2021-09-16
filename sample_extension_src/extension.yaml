@@ -4,11 +4,15 @@ meta:
   name: sample
   type: extension
 
-keyboardShortcuts:
+keyboardShortcuts: # capability
   - name: select
     keys: ['cmd', 'l']
 
-ui:
-  sidebar:
-    - name: top
-      type: section
+frontend:
+  index: ./frontend/index.js
+  controls:
+    - name: selector
+      type: sidebar
+
+extensions:
+  - gigamono.sample_app

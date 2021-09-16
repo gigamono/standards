@@ -17,9 +17,7 @@ function sample() {
 
   const currentUser = db.from("users").by(cachedUser.Id);
 
-  const deck = subapp.canvasSource("fs://frontends/deck/", "svelte");
-
-  deck.build("fs://dist/deck");
+  subapp.register("vol://subapps/sample_subapp_src", "gigamono.sample_subapp")
 
   return {
     statusCode: 200,

@@ -1,0 +1,24 @@
+meta:
+  version: 0.0.1
+  author: Stephen Akinyemi
+  name: sample
+  type: backend
+
+fs:
+  dirs: [ 'vol://', 'fs://' ]
+
+memcache:
+  keys: [ 'users.*' ]
+
+db:
+  - model: users
+    permissions: 'rw'
+
+introspect:
+  permissions: true
+
+http:
+  request: true
+
+backend:
+  index: backend.js
