@@ -1,0 +1,11 @@
+meta:
+  version: 0.0.1
+  author: Stephen Akinyemi
+  name: Sidebar Section
+  type: deckpage
+
+frontendWorkflows:
+  - workflow:frontend:onclick.yaml
+
+page:
+

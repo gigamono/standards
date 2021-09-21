@@ -9,7 +9,7 @@ function sample() {
 
   const fetchedFile = fs.open("fs://samples/sample.txt").read();
 
-  const cachedFile = fs.open("vol://samples/sample.txt").read();
+  const volumeFile = fs.open("mnt://samples/sample.txt").read();
 
   const cachedUser = memcache.get("users.currentUser");
 
@@ -17,7 +17,7 @@ function sample() {
 
   const currentUser = db.from("users").by(cachedUser.Id);
 
-  subapp.register("vol://subapps/sample_subapp_src", "gigamono.sample_subapp")
+  subapp.register("mnt://subapps/sample_subapp_src", "gigamono.sample_subapp")
 
   return {
     statusCode: 200,

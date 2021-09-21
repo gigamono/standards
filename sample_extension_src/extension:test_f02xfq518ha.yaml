@@ -1,0 +1,15 @@
+meta:
+  version: 0.0.1
+  author: Stephen Akinyemi
+  name: Test
+  type: extension
+
+controls:
+  - deckpage:control:sidebar_section_f02xfq518ha.yaml
+
+backendWorkflows:
+  - workflow:backend:process_receipt_f02xfq518ha.yaml
+
+extensionsUsed:
+  - keyboard_shortcuts
+  - gigamono:sample_app:*

@@ -1,0 +1,11 @@
+meta:
+  version: 0.0.1
+  author: Stephen Akinyemi
+  name: canvas
+  type: frontendpage
+
+frontendWorkflows:
+  - workflow:frontend:onclick.yaml
+
+page:
+
