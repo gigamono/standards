@@ -103,6 +103,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - Extension Interface
   - Settings Interface
   - Keyboard Shortcuts
+  - Subapp Bridge (an interface for subapps to access shared data)
   - Wiki (Deck)
   - Pricing (pricing matrix, sliders, subscription types, etc.)
   - Installation & Uninstallation (Required)
