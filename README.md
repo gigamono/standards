@@ -149,11 +149,21 @@ Also it allows plugins to make decisions at runtime about the final look of some
 
     - Security Audit (checks for XSS, Data leak, etc.) - Free
     - SEO (like Yoast or RankMath) - Freemium
+    - Profiler - Free
+    - Search - Free
 
   - Low Difficulty
 
     - Theming (for creating themes) - Free
     - Workspace Auth (Special Extension, gets updated by the system) - Free
+
+- Subapps to build
+
+  - Frontend
+  - Deck
+  - Backend
+  - Base
+  - API (like Postman)
 
 - Security
   - Permissions are static snippets. They are removed when a user accepts them before runtime.
