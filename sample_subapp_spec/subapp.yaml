@@ -1,0 +1,15 @@
+meta:
+  version: 0.0.1
+  type: subapp
+
+frontends:
+  canvas: # The UI shown on the canvas and its logic
+    spec: frontend/canvas/frontend.yaml
+    index: frontend/canvas/index.html # Optional
+
+  controller: # The sandboxed logic that drives the Gigamono UI.
+    spec: frontend/sidebar/frontend.yaml
+    index: frontend/sidebar/index.js # Optional
+
+backends:
+  - spec: backend/backend.yaml

@@ -1,9 +1,0 @@
-meta:
-  version: 0.0.1
-  author: Stephen Akinyemi
-  name: On Click
-  type: workflow
-
-permissions:
-
-workflow:

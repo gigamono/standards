@@ -34,7 +34,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
 
 - Plugin Types
 
-  - Extensions (runs in a specific arena)
+  - Extensions
   - Subapps
 
 - Subapp UI

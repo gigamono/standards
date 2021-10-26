@@ -1,8 +1,0 @@
-version: 1
-kind: Board
-
-metadata:
-  name: Main Business Events
-  authors:
-    - name: James Brown
-      email: james@brown.com
