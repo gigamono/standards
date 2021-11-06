@@ -1,26 +1,19 @@
 meta:
-  version: 0.0.1
-  type: backend
+  version: 0.1.0
+  kind: backend
+
+variant: null
 
 permissions:
   fs:
     dirs: [ '/assets' ]
 
-  db:
-    - model: users
-      permissions: 'rw'
-
-  http:
-    request: true
 
 integrations:
-  0: /integrations/test-integration-1/integration.yaml
-  1: /integrations/test-integration-2/integration.yaml
+  0: /integrations/github/integration.yaml
 
 steps:
   0:
     integration: 0
-  1:
-    integration: 1
   2:
     integration: null

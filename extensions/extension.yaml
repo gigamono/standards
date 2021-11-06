@@ -1,0 +1,9 @@
+meta:
+  version: 0.1.0
+  kind: extension
+
+views:
+  - kind: gigamono:sidebar
+
+controller:
+  script: controller.js

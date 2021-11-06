@@ -52,28 +52,22 @@ Also it allows plugins to make decisions at runtime about the final look of some
     - Sidebar Section
     - Sidebar Widget
     - Bottom Bar
+    - Canvas Control
 
 - Extension UI
 
   Runs within a subapp.
 
-  - Modal
-  - Context Menu
-  - Sidebar
-  - Sidebar Section
-  - Sidebar Widget
-  - Bottom Bar
-  - In-Canvas Widget
-  - Core Subapps
-    - Editor Block
+  - Goes through Subapp Extension API to create UI
 
 - Permission-based Runtime
 
   - Scope (Workspace, Project, etc.)
-  - Granular (Tables, etc.)
+  - Granular (Tables, Directories, etc.)
 
 - Core Subapps Extension APIs
 
+  - UI
   - User's Projects (CRUD)
   - Templating
   - Integrating
