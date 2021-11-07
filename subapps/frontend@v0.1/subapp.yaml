@@ -6,6 +6,11 @@ meta:
     - assets/icons/outline.svg
     - assets/icons/filled.svg
 
+permissions:
+  fs:
+    open: [ '/assets' ]
+    write: [ '/assets' ]
+
 canvas: # The UI shown on the canvas and its logic
   dist: dist/
 
@@ -25,7 +30,8 @@ dashboard:
     script: controller.js
 
 backends:
-  - spec: backend/backend.yaml
+  - kind: surl
+    path: backend/ping-pong
 
 extensions:
   - kind: gigamono:sidebar

@@ -1,0 +1,13 @@
+meta:
+  version: 0.1.0
+  kind: surl
+
+permissions:
+  fs:
+    open: [ '/assets' ]
+    write: [ '/assets' ]
+
+url:
+  path: /v0.1/frontend/ping-pong
+
+middlewares: null
