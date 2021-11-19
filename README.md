@@ -121,36 +121,39 @@ Also it allows plugins to make decisions at runtime about the final look of some
   - frontend/
   - backend/
 
-- Extensions to build
+- Plugins I expect to see or create.
 
   - High Difficulty
 
-    - E-Commerce (for creating stores) - Freemium
-    - CMS [Multilingual] (for managing content) - Free
-    - Email Marketing (for managing email accounts) - Freemium
-    - Analytics (mix of Google Analytics and HotJar) - Freemium
-    - Copilot (with OpenAI Codex) - Freemium
+    - *E-Commerce (for creating stores)
+    - CMS [Multilingual] (for managing content)
+    - Email Marketing (for managing email accounts)
+    - Analytics (mix of Google Analytics and HotJar)
+    - Copilot (with OpenAI Codex)
       - Copy writing
-    - Testing (on save, on commit, on preview, etc.) - Free
+    - Testing (on save, on commit, on preview, etc.)
       - Unit Tests (for logic)
       - Integration Tests (for backend logic)
       - End to End Tests (for interactions)
-    - Debugger - Free
-    - Social Media - Freemium
-    - Forum - Freemium
-    - Animation - Free
+    - *Debugger
+    - Social Media
+    - Forum
+    - *Animation
+    - Project Management
+    - Ticket Management
 
   - Mid Difficulty
 
-    - Security Audit (checks for XSS, Data leak, etc.) - Free
-    - SEO (like Yoast or RankMath) - Freemium
-    - Profiler - Free
-    - Search - Free
+    - *Security Audit (checks for XSS, Data leak, etc.)
+    - *SEO (like Yoast or RankMath)
+    - Profiler
+    - Search
+    - Code Editor
 
   - Low Difficulty
 
-    - Theming (for creating themes) - Free
-    - Workspace Auth (Special Extension, gets updated by the system) - Free
+    - Theming (for creating themes)
+    - Workspace Auth (Special Extension, gets updated by the system)
 
 - Subapps to build
 
