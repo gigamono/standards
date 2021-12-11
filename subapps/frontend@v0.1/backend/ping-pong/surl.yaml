@@ -7,7 +7,7 @@ permissions:
     open: [ '/assets' ]
     write: [ '/assets' ]
 
-url:
+register: # Where to register surl
   path: /v0.1/frontend/ping-pong
 
 middlewares: null

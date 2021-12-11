@@ -83,10 +83,20 @@ The ResourceTable is what makes the capability-based system possible. The `resou
 
 **Write-Read Resource**
 
-A lot of the resources tend to have read or write functionality, so deno_core `Resource` trait implements read, write, close functions. This means you can implement all-in-one `read`, `read` and `close` ops that can take any resource implementing the functions and that is what tera and deno did.
+A lot of the resources tend to have read or write functionality, so deno_core `Resource` trait implements read, write, close functions. This means you can implement all-in-one `read`, `read` and `close` ops that can take any resource implementing the functions and that is what deno did.
+
+```js
+let f = open("samples.txt", { create: true }); // open returns a sys.File.
+let chunk = sys.read(f.rid); // sys.read is a generic read function that can read from any dyn Resource.
+```
+
+The problem however is that the interface that these functions expose is not adequate for the kind of permission system tera is aiming for. They do not expose `OpState` which contains permissions object needed for validating reads and writes. deno simply checks for all the permissions including read and write ahead of time, when the resource is created and allocated. This works for files because the OS requires users to specify read and/or write permission at open/creation time, but it does not work for sockets which have no such mechanism. This means for sockets, we still need to check for permission during read or write.
+
+On the other hand, even if these functions were to expose `OpState`, using just them alone in a `readAll`/`writeAll` implementations is going to result in repeated expensive unecessary permission checks. So ideally, we would need `read_no_check` and `write_no_check` to accompany `read`/`write` functions of Resource so checks are only done once for a `readAll` or `writeAll` implementation.
+
+At the end of the day, `tera` opted for not using Resource read and write functions, so we implement Resource-specific `read` and `write` functions and defer the genericity to the JavaScript postcript files. There we can have `Writer`, `Reader`, etc. interfaces that resources like `File` and `Socket` can implement.
 
 ##
-
 
 ### THE LOADERS
 

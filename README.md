@@ -141,6 +141,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
     - *Animation
     - Project Management
     - Ticket Management
+    - Cloud Monitoring
 
   - Mid Difficulty
 
@@ -149,11 +150,12 @@ Also it allows plugins to make decisions at runtime about the final look of some
     - Profiler
     - Search
     - Code Editor
+    - *File Manager
 
   - Low Difficulty
 
-    - Theming (for creating themes)
-    - Workspace Auth (Special Extension, gets updated by the system)
+    - *Theming (for creating themes)
+    - *Workspace Auth (Special Extension, gets updated by the system)
 
 - Subapps to build
 
