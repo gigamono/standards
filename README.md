@@ -145,7 +145,7 @@ Also it allows plugins to make decisions at runtime about the final look of some
 
   - Mid Difficulty
 
-    - *Security Audit (checks for XSS, Data leak, etc.)
+    - *Security Audit (checks for XSS, Data leak, etc.) https://nocodenohack.com/
     - *SEO (like Yoast or RankMath)
     - Profiler
     - Search

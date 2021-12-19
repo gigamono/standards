@@ -23,8 +23,8 @@ let allow_list = [PathString("./examples/txt".into())];
 
 let permissions = Permissions::builder()
     .add_permissions(&[
-        (FS::Open, &allow_list),
-        (FS::Read, &allow_list)
+        (Fs::Open, &allow_list),
+        (Fs::Read, &allow_list)
     ])
     .build();
 
@@ -101,6 +101,7 @@ At the end of the day, `tera` opted for not using Resource read and write functi
 ### THE LOADERS
 
 ## GIGAMONO FRAMEWORK
+
 ```
 +---------------------------------------------Gigamono-Web-Client---+
 |                                                                   |
@@ -139,14 +140,13 @@ At the end of the day, `tera` opted for not using Resource read and write functi
 The Gigamono Framework executes serverless functions written in JavaScript, but in order to specify how the function should be executed Gigamono needs a manifest file to tell it what to do with the code.
 
 Currently Gigamono only understands 4 types of manifest files:
+
 - extension manifest
 - subapp manifest
 - scheduled_function manifest
 - url_function manifest
 
-
 ### THE ENGINE API
 
 The engine-api is the gateway to the public internet. User requests do not reach the other parts of the Gigamono unless they pass through the engine-api.
 The engine-api also acts as a proxy server for engine-backend because it needs to be able to relay request or stream frames as is to the engine-backend to handle.
-
