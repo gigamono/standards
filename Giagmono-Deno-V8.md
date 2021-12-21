@@ -98,9 +98,25 @@ At the end of the day, `tera` opted for not using Resource read and write functi
 
 ##
 
+### SNAPSHOT
+
+You can take a snapshot of your v8::Isolate for faster startup time. But the problem, I have discovered, is that you can't take snapshot and continue running at the same time making a dynamic snapshot based on user runtime options unattainable. There has to be a build step.
+
+One curious problem I also discovered with deno_core is that it expects its snapshots to contain a `Deno` namespace.
+
+https://github.com/denoland/deno/blob/a1f0796fccfafee19b2fe06155efe746da2e9654/core/runtime.rs#L506-L507
+
+This means I have to expose the Deno namespace.
+
+##
+
 ### THE LOADERS
 
+
+
 ## GIGAMONO FRAMEWORK
+
+STALE DIAGRAM
 
 ```
 +---------------------------------------------Gigamono-Web-Client---+
@@ -141,12 +157,18 @@ The Gigamono Framework executes serverless functions written in JavaScript, but 
 
 Currently Gigamono only understands 4 types of manifest files:
 
+- api manifest
+- app manifest
 - extension manifest
-- subapp manifest
-- scheduled_function manifest
-- url_function manifest
+- scheduled manifest
 
-### THE ENGINE API
+### THE ENGINE BACKEND
 
-The engine-api is the gateway to the public internet. User requests do not reach the other parts of the Gigamono unless they pass through the engine-api.
-The engine-api also acts as a proxy server for engine-backend because it needs to be able to relay request or stream frames as is to the engine-backend to handle.
+
+**Isolating the Middleware Functions**
+
+Engine Backend supports auth and middleware scripts execution just before the main api module is executed. This allows developer of the api to do needed authentication, and other functions that are required before handling request and this has to be achieved with security in mind. We need to isolate the execution of each middleware.
+
+Initially, isolation was achieved by spawning a new runtime for each middleware but I can imagine how expensive that will get as the list of middleware grows, so I decided to use a single runtime for all middlewares but with the replace main permissions with the middleware's permissions just before running.
+
+The next issue was preventing unguided writing to the global scope. Writing to the global scope should be intentional via `globalThis`. If we allow middleware scripts that is written for the top-level, it would be easy for users to mistakenly introduce a `var` declaration leading to potential data leak. Instead we require user to provide a script that can fit in a `(\n{} \n)()` which is ideally a function declaration. Although, it is still possible to write to the global scope because we don't parse the function users give back to us. https://gist.github.com/appcypher/2c210cd04774f1812a4b3e5c84496858. At that point the user is intentional about leakinhg data.
