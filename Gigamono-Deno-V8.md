@@ -172,3 +172,14 @@ Engine Backend supports auth and middleware scripts execution just before the ma
 Initially, isolation was achieved by spawning a new runtime for each middleware but I can imagine how expensive that will get as the list of middleware grows, so I decided to use a single runtime for all middlewares but with the replace main permissions with the middleware's permissions just before running.
 
 The next issue was preventing unguided writing to the global scope. Writing to the global scope should be intentional via `globalThis`. If we allow middleware scripts that is written for the top-level, it would be easy for users to mistakenly introduce a `var` declaration leading to potential data leak. Instead we require user to provide a script that can fit in a `(\n{} \n)()` which is ideally a function declaration. Although, it is still possible to write to the global scope because we don't parse the function users give back to us. https://gist.github.com/appcypher/2c210cd04774f1812a4b3e5c84496858. At that point the user is intentional about leakinhg data.
+
+
+### THE WEB UI
+
+**Session**
+
+Gigamono tries to remember the user's session and maintain it across app session. There are a lot of states Gigamono tries to remember to allow a seamless user experience.
+
+**Events and Reactivity**
+
+The Gigamono Web UI is designed with reactivity and events in mind, so you see events happening everywhere in the UI and subscribers reacting.
